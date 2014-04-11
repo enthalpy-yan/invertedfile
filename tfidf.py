@@ -1,25 +1,31 @@
 """
 Module for TF-IDF
 """
+import operator as opt
+from itertools import imap, ifilter
 
-from itertools import imap
-from scipy import spatial
-
-def hmatchs(u_iter, v):
+def ham_dist(str1, str2):
     """
-    Calculate hamming distance between the input binary string and string
-    iterator.
+    Calculate hamming distance between two binary digits string.
+    """
+    return sum(imap(opt.ne, str1, str2))
+
+def hmatchs(u_iter, v, dist):
+    """
+    Get a iterator of the list of hamming distances smaller than
+    the given hamming distance.
 
     Parameters
     ----------
     u_iter: list of binary string.
     v: input binary string.
+    dist: the largest length of hamming distance.
 
     Returns
     -------
-    A sorted hamming distance list.
+    A hamming distance iterator.
     [(dist, binary string from original iterator), ....]
     """
     def _get_dist(target):
-        return spatial.distance.hamming(target, v), target
-    return sorted(imap(_get_dist, u_iter))
+        return ham_dist(target, v), target
+    return ifilter(lambda t: t[0] < dist, imap(_get_dist, u_iter))
