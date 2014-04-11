@@ -12,7 +12,7 @@ def hmatchs(u_iter, v):
 
     Parameters
     ----------
-    u_iter: sets of binary string.
+    u_iter: list of binary string.
     v: input binary string.
 
     Returns
