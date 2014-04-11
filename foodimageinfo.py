@@ -41,7 +41,7 @@ def images_iter(directory):
         """
         Function for storing jpeg file infos.
         """
-        attrs = ["path", "description", "businessid"]
+        attrs = ["location", "description", "businessid"]
         return dict(zip(attrs, attrlist))
 
     return (_jpg_file_info(_parse_attribute(f)) for f in _imagefiles())
