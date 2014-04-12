@@ -5,7 +5,9 @@ Use images_iter function to get all files infomation in given directory.
 Use filter_by_attrs function to categorize image by their attribute.
 """
 
-import os, sys, re
+import os
+import sys
+import re
 from collections import defaultdict
 from itertools import groupby
 
@@ -69,12 +71,12 @@ def filter_by_attrs(images_iter, iterable=False):
         where:
 
         iterator-1 =>
-          ('attribute1', 'filepath1'), ('attribute1', 'filepath2'), 
+          ('attribute1', 'filepath1'), ('attribute1', 'filepath2'),
           ('attribute1', 'filepath3')
         iterator-2 =>
           ('attribute2', 'filepath4'), ('attribute2', 'filepath5')
         iterator-3 =>
-          ('attribute3', 'filepath6'), ('attribute3', 'filepath7'), 
+          ('attribute3', 'filepath6'), ('attribute3', 'filepath7'),
           ('attribute3', 'filepath8')
     """
     def image_generator(iter):

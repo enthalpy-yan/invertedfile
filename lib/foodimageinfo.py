@@ -45,3 +45,6 @@ def images_iter(directory):
         return dict(zip(attrs, attrlist))
 
     return (_jpg_file_info(_parse_attribute(f)) for f in _imagefiles())
+
+for i in list(images_iter('/Users/hanyan/Leetcode/yelp_images'))[:20]:
+    print i
