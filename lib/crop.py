@@ -31,10 +31,3 @@ def crop_img(img, log):
     except:
         
         log.write("Unable to load image: " + img + '\n')
-
-    # print "The size of the Image is: "
-    # print(original.format, original.size, original.mode)
-
-top_dir = "/Users/lei/Desktop/2014Spring_course_resource/yelp_images"
-
-crop_dir(top_dir)
