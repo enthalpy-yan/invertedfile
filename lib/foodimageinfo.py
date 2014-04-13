@@ -1,8 +1,7 @@
 """
-Module for getting image file from ayahoo_test_images folder.
+Module for getting image file from the folder that contains all food images extracted from yelp.com.
 
 Use images_iter function to get all files infomation in given directory.
-Use filter_by_attrs function to categorize image by their attribute.
 """
 
 import os
