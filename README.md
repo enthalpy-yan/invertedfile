@@ -9,7 +9,6 @@ invertedfile
 
 [Numpy] (http://www.numpy.org)
 
-[LIBSVM_3.17](http://www.csie.ntu.edu.tw/~cjlin/libsvm/)
 
 ```
 -root/
