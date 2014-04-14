@@ -12,11 +12,11 @@ invertedfile
 
 ```
 -root/
-  |__lib/  			            	  (lib for inverted indexing)
-     |__crop.py           			      (crop the original images)
-     |__foodimageinfo.py     			    (getting data from yelp)
-     |__imagefileinfo.py   			      (getting data from ayahoo_test_images)
+  |__lib/                             (lib for inverted indexing)
+     |__crop.py                       (crop the original images)
+     |__foodimageinfo.py              (getting data from yelp)
+     |__imagefileinfo.py              (getting data from ayahoo_test_images)
      |__sample_generator.py           (sample generator)
-     |__tfidf.py                    	(implementation of tf-idf)
-     |__vq.py                     	  (Functions for creating bag of words)
+     |__tfidf.py                      (implementation of tf-idf)
+     |__vq.py                         (Functions for creating bag of words)
 ```
