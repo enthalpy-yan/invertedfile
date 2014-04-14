@@ -34,6 +34,17 @@ def hmatchs(u_iter, v, dist):
     return ifilter(lambda t: t[0] < dist, imap(_get_dist, u_iter))
 
 def getidf(arr):
+    """
+    Calculate bag of words idf from all images
+    
+    Parameters
+    ----------
+    arr: k*l ndarray containing bag of word representations of all images
+    
+    Returns
+    -------
+    a list of k idf 
+    """
     k,l = arr.shape
     idf = []
     j = 0
@@ -46,6 +57,19 @@ def getidf(arr):
     return idf
 
 def gettf(txt,k):
+    """
+    Calculate bag of word tf for all images
+    
+    Parameters
+    ----------
+    txt: images bag of word file
+    k: bag of word number
+    
+    Returns
+    -------
+    l: total image number
+    nparr: ndarray containing all images bag of word representation
+    """
     f = open(txt,'r')
     l = sum(1 for line in f)
     nparr = np.zeros((l,k))
@@ -63,6 +87,20 @@ def gettf(txt,k):
     return l,nparr
     
 def tf_idf(txt,k):
+    """
+    Calculate tf-idf for whole images
+    
+    Parameters
+    ----------
+    txt: images bag of word file
+    k: bag of word number
+    
+    Returns
+    -------
+    idf: images idf
+    nparr.T: k*l ndarray with tf-idf weighted bag of words
+    
+    """
     #calculate tf
     l,nparr = gettf(txt,k)
     
@@ -79,6 +117,21 @@ def tf_idf(txt,k):
     return idf,nparr.T
 
 def tfidf_rank(img,code_book,tfidf_arr,idf):
+    """
+    Give back top 10 similar images for the incoming one
+    
+    Parameters
+    ----------
+    img: target image path
+    code_book: txt that contain codebook detail
+    tfidf_arr: whole image tf-idf matrix
+    idf: word idf list
+    
+    Returns
+    -------
+    top 10 similar images indexes
+    
+    """
     #
     #codebook = vq.code_book("nomeaning", "Mixed",code_book,K=20,save=True, read_from_txt=True)
     #hist = vq.quatization(img, codebook, soft=False).values()
